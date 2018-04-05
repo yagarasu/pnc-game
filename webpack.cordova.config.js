@@ -80,6 +80,10 @@ module.exports = {
     tls: 'empty'
   },
   resolve: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules'
+    ],
     alias: {
       'phaser': phaser,
       'pixi': pixi,

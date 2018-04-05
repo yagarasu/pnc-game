@@ -1,6 +1,5 @@
 export default {
-  gameWidth: 760,
-  gameHeight: 400,
-  localStorageName: 'phaseres6webpack',
-  webfonts: ['Bangers']
+  gameWidth: 720,
+  gameHeight: 480,
+  localStorageName: 'yagarasu-pnc'
 }
