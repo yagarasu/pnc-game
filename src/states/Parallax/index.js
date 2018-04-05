@@ -11,9 +11,13 @@ export default class extends Phaser.State {
       fill: '#77BFA3',
       smoothed: true
     })
+
+    this.layer7 = this.add.tileSprite(0, 0 , this.game.width, this.game.height, 'parallax-3')
+    this.layer7.tileScale.x = 0.5
+    this.layer7.tileScale.y = 0.5
   }
 
-  render() {
-
+  update() {
+    this.layer7.tilePosition.x += 0.5
   }
 }

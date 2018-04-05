@@ -25,6 +25,10 @@ export default class extends Phaser.State {
 
     // Load assets
     this.load.image('mushroom', 'assets/images/mushroom2.png')
+    // ... Parallax
+    for (let i = 1; i <= 7; i++) {
+      this.load.image('parallax-' + i, 'assets/images/parallax/' + i + '.png')
+    }
   }
 
   render () {
