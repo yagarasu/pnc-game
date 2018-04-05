@@ -24,6 +24,11 @@ export default class extends Phaser.State {
       asset: 'mushroom'
     })
 
+    this.mushroom.inputEnabled = true
+    this.mushroom.events.onInputDown.add(() => {
+      this.state.start('Parallax')
+    }, this)
+
     this.game.add.existing(this.mushroom)
   }
 

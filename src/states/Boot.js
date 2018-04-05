@@ -29,7 +29,7 @@ export default class extends Phaser.State {
 
   render () {
     if (this.fontsLoaded) {
-      this.state.start('Game')
+      this.state.start('Parallax')
     }
   }
 }
