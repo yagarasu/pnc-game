@@ -29,6 +29,7 @@ export default class extends Phaser.State {
     for (let i = 1; i <= 7; i++) {
       this.load.image('parallax-' + i, 'assets/images/parallax/' + i + '.png')
     }
+    this.load.spritesheet('ninja', 'assets/images/parallax/run-Sheet.png', 36, 26, 3)
   }
 
   render () {

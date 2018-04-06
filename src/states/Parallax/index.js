@@ -14,8 +14,13 @@ export default class extends Phaser.State {
       this.parallaxParts[name] = this.add.tileSprite(0, 0 , this.game.width, this.game.height, name)
       this.parallaxParts[name].tileScale.x = hScale
       this.parallaxParts[name].tileScale.y = hScale
-      this.parallaxPartsSpeed[name] = ((7 - i) * (7 - i)) / 7.5
+      this.parallaxPartsSpeed[name] = ((7 - i) * (7 - i)) / 3
     }
+
+    const sprite = this.add.sprite(this.world.centerX, 360, 'ninja')
+    sprite.animations.add('walk', [0, 1, 2])
+    sprite.animations.play('walk', 30, true)
+    sprite.scale.set(2)
 
     const bannerText = 'Parallax test'
     let banner = this.add.text(10, 10, bannerText, {
