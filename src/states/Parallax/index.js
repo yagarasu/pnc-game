@@ -5,19 +5,30 @@ export default class extends Phaser.State {
   preload() { }
 
   create() {
+    const hScale = this.game.height / 1080
+
+    this.parallaxParts = {}
+    this.parallaxPartsSpeed = {}
+    for (var i = 7; i >= 1; i--) {
+      const name = 'parallax-' + i
+      this.parallaxParts[name] = this.add.tileSprite(0, 0 , this.game.width, this.game.height, name)
+      this.parallaxParts[name].tileScale.x = hScale
+      this.parallaxParts[name].tileScale.y = hScale
+      this.parallaxPartsSpeed[name] = ((7 - i) * (7 - i)) / 7.5
+    }
+
     const bannerText = 'Parallax test'
     let banner = this.add.text(10, 10, bannerText, {
       font: '20px Bangers',
-      fill: '#77BFA3',
+      fill: '#e57b0f',
       smoothed: true
     })
-
-    this.layer7 = this.add.tileSprite(0, 0 , this.game.width, this.game.height, 'parallax-3')
-    this.layer7.tileScale.x = 0.5
-    this.layer7.tileScale.y = 0.5
   }
 
   update() {
-    this.layer7.tilePosition.x += 0.5
+    for (var i = 7; i >= 1; i--) {
+      const name = 'parallax-' + i
+      this.parallaxParts[name].tilePosition.x -= this.parallaxPartsSpeed[name]
+    }
   }
 }
